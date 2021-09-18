@@ -1,9 +1,8 @@
 /* add css module styles here (optional) */
 
-.test {
+.card {
   padding: 1em;
   border-radius: 3px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
-  margin: 25px;
-
+  height: 100%;
 }
