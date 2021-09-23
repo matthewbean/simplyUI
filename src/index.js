@@ -1,17 +1,18 @@
   
 import Card from './components/card'
-import Container from './components/container'
-import FlexItem from './components/flexItem'
 import Navbar from './components/navbar'
 import Button from './components/button'
 import Pagination from './components/pagination'
+import Form from './components/Form'
+import Input from './components/input'
+
+import Container from './formatters/container'
+import FlexItem from './formatters/flexItem'
+import Typography from './formatters/typography'
 
 
-// export Foo and Bar as named exports
-export { Card, Container, FlexItem, Navbar, Button, Pagination }
 
-// alternative, more concise syntax for named exports
-// export { default as Foo } from './Foo'
+export { Card, Container, FlexItem, Navbar, Button, Pagination, Typography, Form, Input }
 
-// you can optionally also set a default export for your module
-export default { Card, Container, FlexItem, Navbar, Button, Pagination }
+
+export default { Card, Container, FlexItem, Navbar, Button, Pagination, Typography, Form, Input }

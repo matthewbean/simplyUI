@@ -1,0 +1,8 @@
+/* add css module styles here (optional) */
+
+.form {
+}
+.form input{
+    padding: .25rem;
+    display: block;
+}

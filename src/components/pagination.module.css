@@ -1,17 +1,17 @@
 /* add css module styles here (optional) */
 
 .pagination {
-  padding: .5em;
+  padding: .5rem;
 
 }
 .pagination > *{
-  margin-bottom: .5em;
+  margin-bottom: .5rem;
 }
 .button{
   
 }
 .controls{
-  margin-top: .5em;
+  margin-top: .5rem;
   display: flex;
   justify-content: space-around;
 

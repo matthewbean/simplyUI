@@ -1,12 +1,12 @@
 /* add css module styles here (optional) */
 
 .container {
-  padding: .5em;
+  padding: .5rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
-  column-gap: .5em;
-  row-gap: .5em;
+  column-gap: .5rem;
+  row-gap: .5rem;
   justify-items: stretch;
   align-items: stretch;
 }
