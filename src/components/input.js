@@ -7,7 +7,7 @@ const Input = (props) => {
   let inputProps={...props, label:undefined}
   return (
   <div className={styles.inputGroup}>
-    {options?.label &&<label htmlFor={name}>{options?.label}:</label>}
+    {options?.label &&<label htmlFor={name}>{options?.label}</label>}
     <input {...inputProps} type={type ?? 'text'} className={styles.input}></input>
   </div>
   )

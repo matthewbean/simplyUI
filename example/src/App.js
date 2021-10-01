@@ -10,7 +10,7 @@ const App = () => {
     <Navbar />
     <Container>
       <FlexItem columns='xs12 s5'>
-        <Card><Button onClick={(e)=>{console.log(e)}}>click here</Button> Create React Library Example 😄 </Card>
+        <Card options={{rounded:true}}><Button options={{rounded:true}} onClick={(e)=>{console.log(e)}}>click here</Button> Create React Library Example 😄 </Card>
       </FlexItem>
       <FlexItem columns='xs12 s5'>
         <Card><Button onClick={(e)=>{console.log(e)}}>click here</Button> Create React Library Example 😄 </Card>
@@ -20,18 +20,24 @@ const App = () => {
       </FlexItem>
      
     </Container>
+    <Container>
+    <FlexItem columns='xs12 s3'></FlexItem>
+    <FlexItem columns='xs12 s6'>
     <Card >
-    <Form>
+    <Form onSubmit={(object)=>console.log(object)}>
 
-      <Input placeholder='test' options={{label:'date'}} name='test1' type="date" />
-      <Input placeholder='test' options={{label:'range'}} name='test3' min="10" max="50" step="2" type="range" />
-      <Input placeholder='test' options={{label:'file'}} name='test4' type="file" />
-      <Input placeholder='test' options={{label:'email'}} name='test5' type="email" />
+      <Input placeholder='test' options={{label:'Date:'}} name='test1' type="date" />
+      <Input placeholder='test' options={{label:'Range:'}} name='test3' min="10" max="50" step="2" type="range" />
+      <Input placeholder='test' options={{label:'File:'}} name='test4' type="file" />
+      <Input placeholder='test' options={{label:'This is a label:'}} name='test5' type="email" />
       
-      <Input placeholder='test' options={{label:'number'}} name='text' type='number' />
-      <Input placeholder='test' options={{label:'test'}} name='test6' type="submit" />
+      <Input placeholder='test' options={{label:'Number:'}} name='text' type='number' />
+      <Input placeholder='test' name='test6' type="submit" value='Submit' />
     </Form>
     </Card>
+    </FlexItem>
+    <FlexItem columns='xs12 s3'></FlexItem>
+    </Container>
     <Pagination options={{pageLength:3}}>
       <Card>item one</Card>
       <Card>item two</Card>

@@ -29,10 +29,13 @@ const Form = ({ options,onSubmit, style, children }) => {
   const handleChange = (e)=>{
     setState({...state, [e.target.name]:e.target.value})
   }
-  return <form style={style} onSubmit={onSubmit??handleSubmit} className={styles.form}>{children.map((item, i)=>{
+  return <form style={style} onSubmit={handleSubmit} className={styles.form}>{children.map((item, i)=>{
     if (item.type ==='input'){
       return <input {...item.props} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></input>
-    }  else if (item.type.name === 'Input'){
+    }   else if (item.type.name === 'Input' && item.props.type === 'submit'){
+      return <Input {...item.props} ></Input>
+    }
+    else if (item.type.name === 'Input'){
       return <Input {...item.props} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></Input>
     }
      else {

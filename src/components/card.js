@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import styles from './card.module.css'
 
-const Card = ({ text, options, style, children }) => {
-  return <div style={style} className={styles.card}>{children}</div>
+const Card = (props) => {
+  const { style, children, options }=props
+  return <div style={style} className={styles.card  + ' ' + (props?.options?.rounded?styles.rounded: '')}>{children}</div>
 }
 Card.propTypes = {
   style: PropTypes.object,

@@ -7,3 +7,6 @@
   border-radius: 3px;
   text-transform: uppercase;
 }
+.rounded{
+  border-radius: 1.5em;
+}
