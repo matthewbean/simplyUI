@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Input from './input'
 import PropTypes from 'prop-types';
 import styles from './form.module.css'
+import { colorLuminance } from '../utilities/utils'; 
 
 const Form = ({ options,onSubmit, style, children }) => {
   let initialState={}
@@ -33,7 +34,8 @@ const Form = ({ options,onSubmit, style, children }) => {
     if (item.type ==='input'){
       return <input {...item.props} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></input>
     }   else if (item.type.name === 'Input' && item.props.type === 'submit'){
-      return <Input {...item.props} ></Input>
+      let primary=getComputedStyle(document.documentElement).getPropertyValue('--primary')
+      return <Input {...item.props} style={{background:`linear-gradient(145deg, ${colorLuminance(primary, 0.17)}, ${colorLuminance(primary, 0.1)})`}} ></Input>
     }
     else if (item.type.name === 'Input'){
       return <Input {...item.props} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></Input>

@@ -1,0 +1,24 @@
+.fluidContainer{
+  margin: 0 auto;
+  max-width: 350px;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 481px){
+  .fluidContainer{
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 769px){
+  .fluidContainer{
+    max-width: 750px;
+  }
+}
+
+
+@media (min-width: 1025px){
+.fluidContainer{
+  max-width: 1000px;
+}
+}

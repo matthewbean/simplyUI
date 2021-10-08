@@ -1,12 +1,16 @@
 .button{
   padding: .5rem;
+
   border: none;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
-  background-color: #215173;
+  box-shadow:  2px 2px 5px var(--dark-shadow),
+             -2px -2px 5px var(--light-shadow);
+  background: linear-gradient(145deg, var(--light-gradient), var(--dark-gradient));
   color: white;
-  border-radius: 3px;
+  border-radius: 1.5em;
   text-transform: uppercase;
 }
-.rounded{
-  border-radius: 1.5em;
+.button:active{
+  box-shadow: inset 1px 1px 1px var(--dark-shadow),
+             inset -1px -1px 1px var(--light-shadow);
+  background: var(--primary);
 }

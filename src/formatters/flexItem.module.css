@@ -1,6 +1,8 @@
-
+.flexItem{
+  margin-bottom: 2rem;
+}
 .xs1{
-  grid-column: span 2;
+  grid-column: span 1;
 }
 .xs2{
   grid-column: span 2;
@@ -41,7 +43,7 @@
 @media (min-width: 481px){
   
 .s1{
-  grid-column: span 2;
+  grid-column: span 1;
 }
 .s2{
   grid-column: span 2;
@@ -82,7 +84,7 @@
 @media (min-width: 769px){
   
 .m1{
-  grid-column: span 2;
+  grid-column: span 1;
 }
 .m2{
   grid-column: span 2;
@@ -124,7 +126,7 @@
 @media (min-width: 1025px){
   
 .l1{
-  grid-column: span 2;
+  grid-column: span 1;
 }
 .l2{
   grid-column: span 2;
@@ -166,7 +168,7 @@
 @media (min-width: 1201px){
   
 .xl1{
-  grid-column: span 2;
+  grid-column: span 1;
 }
 .xl2{
   grid-column: span 2;

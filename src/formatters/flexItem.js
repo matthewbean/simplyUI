@@ -5,7 +5,7 @@ import styles from './flexItem.module.css'
 const FlexItem =({ options, children, columns }) => {
   let stylesList=columns.split(' ')
 
-  return <div className={stylesList.map((item)=>styles[item]).join(' ')}>
+  return <div className={stylesList.map((item)=>styles[item]).join(' ') + ' ' + styles.flexItem}>
     {children}
   </div>
 }

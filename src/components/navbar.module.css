@@ -1,5 +1,56 @@
 .navbar{
   width: 100%;
-  background-color: blue;
+  background-color: var(--color-white);
   height: 3rem;
+  margin-bottom: 3rem;
+  box-shadow:  1px 1px 5px #bebebe;
+  @media (--media-min-small) {
+    display: none;
+  }
+  
+}
+.navbar a{
+  text-decoration: none;
+  color: var(--text);
+}
+.notFluid{
+  display: flex;
+  align-items: center;
+}
+.navbar > :not(.fluidContainer){
+  margin: 0 .5rem;
+}
+.fluidContainer > *{
+  margin: 0 .5rem;
+}
+
+.navbar ul li{
+  display: inline-block;
+}
+.fluidContainer{
+  margin: 0 auto;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 481px){
+  .fluidContainer{
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 769px){
+  .fluidContainer{
+    max-width: 750px;
+  }
+}
+
+
+@media (min-width: 1025px){
+.fluidContainer{
+  max-width: 1000px;
+}
 }

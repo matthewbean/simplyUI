@@ -9,24 +9,54 @@
 
 }
 .inputGroup label{
-    display: inline-block;
     margin-right: .5em;
-    flex: 1 0 7em;
+    flex: 0 0 7em;
 }
-.inputGroup input {
-    display: inline-block;
-    flex: 50 1 5em;
-    padding: .3em;
+.inputGroup input:not([type=color]) {
+    flex: 1 10 5em;
+    padding: .5em 1em;
     align-self: flex-end;
+    min-width: 0;
+    
 }
-.inputGroup input[type=submit]{
+.inputGroup input[type=text], 
+.inputGroup input[type=number],
+.inputGroup input[type=email],
+.inputGroup input[type=date],
+.inputGroup input[type=datetime-local],
+.inputGroup input[type=month],
+.inputGroup input[type=password],
+.inputGroup input[type=search],
+.inputGroup input[type=time],
+.inputGroup input[type=url],
+.inputGroup input[type=week],
+.inputGroup input[type=tel]{
+  border-radius: 1.5em;
+    border: none;
+    box-shadow: inset 2px 2px 5px var(--dark-shadow),
+                inset -2px -2px 5px var(--light-shadow);
+
+}
+
+.inputGroup input[type=submit],
+.inputGroup input[type=reset],
+.inputGroup input[type=button]
+{
+  border-radius: 1.5em;
   padding: .5rem;
   border: none;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
-  background-color: #215173;
-  color: white;
-  border-radius: 3px;
+  box-shadow:  2px 2px 5px var(--dark-shadow),
+  -2px -2px 5px var(--light-shadow);
+  background: linear-gradient(145deg, var(--light-gradient), var(--dark-gradient));
+  color: var(--light-text);
   text-transform: uppercase;
+}
+.inputGroup input[type=submit]:active,
+.inputGroup input[type=reset]:active,
+.inputGroup input[type=button]:active{
+  box-shadow: inset 1px 1px 1px var(--dark-shadow),
+  inset -1px -1px 1px var(--light-shadow);
+background: var(--primary);
 }
 .rounded{
   border-radius: 1.5em;
