@@ -1,28 +1,69 @@
 import React from 'react'
 
-import { Form, Card, Container, FlexItem, Navbar, Button, Pagination, Typography, Input } from 'simplyui'
+import { Form, Card, Container, FlexItem, Navbar, NavbarBreak, Button, Pagination, Typography, Input, Reset, FluidContainer } from 'simplyui'
 import 'simplyui/dist/index.css'
 
 const App = () => {
   return (
     <>
+    <Reset>
   <Typography>  
-    <Navbar />
+    <Navbar options={{fluid:true}}>
+     <a href='#' className="logo">
+        Logo
+      </a>
+      <NavbarBreak></NavbarBreak>
+        <a href='#' >Home</a>
+        <a href='#' >About</a>
+        <a href='#' >Contact Us</a>
+    </Navbar>
+    <FluidContainer>
+    <Card>
     <Container>
-      <FlexItem columns='xs12 s5'>
-        <Card options={{rounded:true}}><Button options={{rounded:true}} onClick={(e)=>{console.log(e)}}>click here</Button> Create React Library Example 😄 </Card>
+        <FlexItem columns='s12 m4'>
+          <h2>By from us</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <Button>click me</Button>
+        </FlexItem>
+        <FlexItem columns='s12 m4'>
+          <h2>By from us</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <Button>click me</Button>
+        </FlexItem>
+        <FlexItem columns='s12 m4'>
+          <h2>By from us</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <Button>click me</Button>
+        </FlexItem>
+    </Container>
+    </Card>
+    <Container>
+      <FlexItem columns='s12 m4'>
+        <Card options={{rounded:true}}>
+          <h2>Amazing Deals</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus doloremque, blanditiis quos laudantium impedit dolorem?</p>
+          <Button options={{rounded:true}} onClick={(e)=>{console.log(e)}}>click here</Button>
+        </Card>
       </FlexItem>
-      <FlexItem columns='xs12 s5'>
-        <Card><Button onClick={(e)=>{console.log(e)}}>click here</Button> Create React Library Example 😄 </Card>
+      <FlexItem columns='s12 m4'>
+        <Card options={{rounded:true}}>
+          <h2>Amazing Deals</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, rerum.</p>
+          <Button options={{rounded:true}} onClick={(e)=>{console.log(e)}}>click here</Button>
+        </Card>
       </FlexItem>
-      <FlexItem columns='xs12 s5'>
-        <Card><Button onClick={(e)=>{console.log(e)}}>click here</Button> Create React Library Example 😄 </Card>
+      <FlexItem columns='s12 m4'>
+        <Card options={{rounded:true}}>
+          <h2>Amazing Deals</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero debitis praesentium ipsum enim nobis, unde quo nostrum fugit commodi?</p>
+          <Button options={{rounded:true}} onClick={(e)=>{console.log(e)}}>click here</Button>
+        </Card>
       </FlexItem>
      
     </Container>
     <Container>
-    <FlexItem columns='xs12 s3'></FlexItem>
-    <FlexItem columns='xs12 s6'>
+    <FlexItem columns='s12 s1'></FlexItem>
+    <FlexItem columns='s12 s10'>
     <Card >
     <Form onSubmit={(object)=>console.log(object)}>
 
@@ -36,7 +77,7 @@ const App = () => {
     </Form>
     </Card>
     </FlexItem>
-    <FlexItem columns='xs12 s3'></FlexItem>
+    <FlexItem columns='s12 s1'></FlexItem>
     </Container>
     <Pagination options={{pageLength:3}}>
       <Card>item one</Card>
@@ -49,7 +90,9 @@ const App = () => {
       <Card>item eight</Card>
       <Card>item nine</Card>
     </Pagination>
+    </FluidContainer>
   </Typography>
+  </Reset>
   </>
   )
 }
