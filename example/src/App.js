@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { Form, Card, Container, FlexItem, Navbar, NavbarBreak, Button, Pagination, Typography, Input, Reset, FluidContainer } from 'simplyui'
+import { Form, Card, Container, FlexItem, Navbar, NavbarBreak, Button, Pagination, Typography, Input, Reset, FluidContainer, Theme } from 'simplyui'
 import 'simplyui/dist/index.css'
 
 const App = () => {
   return (
     <>
+    <Theme theme={{'--primary': '#0355e2'}}>
     <Reset>
   <Typography>  
     <Navbar options={{fluid:true}}>
@@ -62,8 +63,7 @@ const App = () => {
      
     </Container>
     <Container>
-    <FlexItem columns='s12 s1'></FlexItem>
-    <FlexItem columns='s12 s10'>
+    <FlexItem columns='s12 m6'>
     <Card >
     <Form onSubmit={(object)=>console.log(object)}>
 
@@ -77,22 +77,48 @@ const App = () => {
     </Form>
     </Card>
     </FlexItem>
-    <FlexItem columns='s12 s1'></FlexItem>
-    </Container>
-    <Pagination options={{pageLength:3}}>
-      <Card>item one</Card>
-      <Card>item two</Card>
-      <Card>item three</Card>
-      <Card>item four</Card>
-      <Card>item five</Card>
-      <Card>item six</Card>
-      <Card>item seven</Card>
-      <Card>item eight</Card>
-      <Card>item nine</Card>
+    <FlexItem columns='s12 m6'>
+      <Card>
+    <Pagination options={{pageLength:7}}>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
+      <div className="">item</div>
     </Pagination>
+    </Card>
+    </FlexItem>
+    </Container>
     </FluidContainer>
   </Typography>
   </Reset>
+  </Theme>
   </>
   )
 }

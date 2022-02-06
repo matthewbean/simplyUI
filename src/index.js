@@ -12,14 +12,13 @@ import FluidContainer from './formatters/fluidContainer'
 import FlexItem from './formatters/flexItem'
 import Typography from './formatters/typography'
 import Reset from './formatters/reset'
-
-import {colorLuminance} from './utilities/utils'
+import Theme from './formatters/theme'
 
 import './variables/colors.css'
 
 
 
-export { Card, Container, FlexItem, Navbar, Button, Pagination, Typography, Form, Input, Reset, NavbarBreak, FluidContainer }
+export { Card, Container, FlexItem, Navbar, Button, Pagination, Typography, Form, Input, Reset, NavbarBreak, FluidContainer, Theme }
 
 
-export default { Card, Container, FlexItem, Navbar, Button, Pagination, Typography, Form, Input, Reset, NavbarBreak }
+export default { Card, Container, FlexItem, Navbar, Button, Pagination, Typography, Form, Input, Reset, NavbarBreak, Theme }

@@ -1,5 +1,5 @@
 .flexItem{
-  margin-bottom: 2rem;
+  height: 100%;
 }
 .xs1{
   grid-column: span 1;

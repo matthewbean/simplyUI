@@ -2,11 +2,11 @@
 
 .container {
   padding: .5rem 0;
-  margin: .5rem 0;
+  margin: 2rem 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
-  column-gap: .5rem;
+  column-gap: 2rem;
   row-gap: 1rem;
   justify-items: stretch;
   align-items: stretch;

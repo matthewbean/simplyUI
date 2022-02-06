@@ -32,13 +32,12 @@ const Form = ({ options,onSubmit, style, children }) => {
   }
   return <form style={style} onSubmit={handleSubmit} className={styles.form}>{children.map((item, i)=>{
     if (item.type ==='input'){
-      return <input {...item.props} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></input>
+      return <input {...item.props} key={i} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></input>
     }   else if (item.type.name === 'Input' && item.props.type === 'submit'){
-      let primary=getComputedStyle(document.documentElement).getPropertyValue('--primary')
-      return <Input {...item.props} style={{background:`linear-gradient(145deg, ${colorLuminance(primary, 0.17)}, ${colorLuminance(primary, 0.1)})`}} ></Input>
+      return <Input {...item.props} key={i} ></Input>
     }
     else if (item.type.name === 'Input'){
-      return <Input {...item.props} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></Input>
+      return <Input {...item.props} key={i} type={item.props.type ?? 'text'} onChange={(e)=>handleChange(e)} value={state[item.props.name]}></Input>
     }
      else {
        return item

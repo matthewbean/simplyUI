@@ -1,64 +1,36 @@
-export function colorLuminance(hex, lum) {
-  // validate hex string
-  hex = String(hex).replace(/[^0-9a-f]/gi, '')
-  if (hex.length < 6) {
-    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
-  }
-  lum = lum || 0
+//color changing
+const isValidHex = (hex) => /^#([A-Fa-f0-9]{3,4}){1,2}$/.test(hex)
 
-  // convert to decimal and change luminosity
-  let rgb = '#',
-    c,
-    i
-  for (i = 0; i < 3; i++) {
-    c = parseInt(hex.substr(i * 2, 2), 16)
-    c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16)
-    rgb += ('00' + c).substr(c.length)
-  }
+const getChunksFromString = (st, chunkSize) => st.match(new RegExp(`.{${chunkSize}}`, "g"))
 
-  return rgb
-}
+const convertHexUnitTo256 = (hexStr) => parseInt(hexStr.repeat(2 / hexStr.length), 16)
 
-export function getContrast(hex) {
-  const r = parseInt(hex.substr(1, 2), 16),
-    g = parseInt(hex.substr(3, 2), 16),
-    b = parseInt(hex.substr(5, 2), 16),
-    yiq = (r * 299 + g * 587 + b * 114) / 1000
-  return yiq >= 128 ? '#001f3f' : '#F6F5F7'
-}
-
-export const isValidColor = hex => /^#[0-9A-F]{6}$/i.test(hex)
-
-export const getColorFromRoute = () => {
-  if (window.location.hash) {
-    if (/^#[0-9A-F]{6}$/i.test(window.location.hash)) {
-      return window.location.hash
+const getAlphafloat = (a, alpha) => {
+    if (typeof a !== "undefined") {return a / 255}
+    if ((typeof alpha != "number") || alpha <0 || alpha >1){
+      return 1
     }
-  }
+    return alpha
 }
 
-export const getSizes = () => {
-  const windowWidth = window.innerWidth
-  const windowHeight = window.innerHeight
-  if ((windowWidth < 1000 || windowHeight < 860) && window.navigator.userAgent !== 'ReactSnap') {
-    if (windowWidth < 800) {
-      if (windowWidth < 680) {
-        return { maxSize: 180, size: 150 }
-      } else {
-        return { maxSize: 250, size: 200 }
-      }
-    } else {
-      return { maxSize: 350, size: 250 }
-    }
+const hexToRGB = (hex, alpha) => {
+    if (!isValidHex(hex)) {throw new Error("Invalid HEX")}
+    const chunkSize = Math.floor((hex.length - 1) / 3)
+    const hexArr = getChunksFromString(hex.slice(1), chunkSize)
+    const [r, g, b, a] = hexArr.map(convertHexUnitTo256)
+    return `rgba(${r}, ${g}, ${b}, ${(alpha?(r+g+b)/756: 1)})`
+}
+
+export const shade=(p,color, alpha )=>{
+  var c;
+  if (color[0]  === 'r'){
+    c=color.replace(/[^\d^\,]/g,'')
+    c=c.split(',')
+    c=`rgba(${c[0]}, ${c[1]}, ${c[2]}, ${(alpha?((parseInt(c[0])+parseInt(c[1])+parseInt(c[2]))/756): 1)})`
   } else {
-    return { maxSize: 410, size: 300 }
+    c=hexToRGB(color, alpha)
   }
-}
 
-export const camelize = str => {
-  return str
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
-      return index === 0 ? word.toLowerCase() : word.toUpperCase()
-    })
-    .replace(/\s+/g, '')
+  var i=parseInt,r=Math.round,[a,b,c,d]=c.split(","),P=p<0,t=P?0:p*255**2,P=P?1+p:1-p;
+  return"rgb"+(d?"a(":"(")+r((P*i(a[3]=="a"?a.slice(5):a.slice(4))**2+t)**0.5)+","+r((P*i(b)**2+t)**0.5)+","+r((P*i(c)**2+t)**0.5)+(d?","+d:")");
 }

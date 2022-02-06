@@ -1,8 +1,6 @@
 /* add css module styles here (optional) */
 
 .pagination {
-  padding: .5rem;
-
 }
 .pagination > *{
   margin-bottom: .5rem;
