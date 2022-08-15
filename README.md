@@ -1,6 +1,5 @@
 # simplyui
 
-##Description
 
 > SimplyUI is a small React component library that focuses on providing easy to build components with skeuomorphism theme. Take a look in the components folder to see all of the different components available.
 
